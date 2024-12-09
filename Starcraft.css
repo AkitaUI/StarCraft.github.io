@@ -1,0 +1,107 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+footer{
+
+    height: auto;
+    border-bottom: none;
+}
+
+.Block{
+    width: 100%;
+    border-bottom: 5px solid #080717;
+
+    position: relative;
+    overflow: hidden; /* Обрезаем всё, что выходит за границы блока */
+    height: 110vh;
+}
+
+footer{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 2px solid black;
+
+    background-image: 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+        url('footer.jpg'); /* Укажите путь к изображению */
+    background-size: cover; /* Масштабируем изображение, чтобы покрыть весь фон */
+    background-position: center; /* Центрируем изображение */
+    background-repeat: no-repeat; /* Отключаем повтор */
+    color: #ffffff; /* Устанавливаем цвет текста для контраста */
+    padding: 40px 20px; /* Внутренние отступы */
+    text-align: center; /* Центрирование контента */
+} 
+
+.social-buttons {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    margin: 10px 10px 50px 50px;
+}
+
+@media (max-width: 1024px) {
+    .social-buttons {
+        grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    }
+}
+
+/* Для экранов до 768px: 2 изображения в ряд */
+@media (max-width: 768px) {
+    .social-buttons {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    }
+}
+
+/* Для экранов до 480px: 1 изображение в ряд */
+@media (max-width: 480px) {
+    .social-buttons {
+        grid-template-columns: repeat(1, 1fr);; /* 1 колонка */
+    }
+}
+
+.social-button {
+    position: relative;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    background: rgba(12, 34, 84, 0.8);
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer; /* Изменение курсора при наведении */
+    transition: color 0.3s;
+    z-index: 1;
+}
+
+.social-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #6e8cf0, #1a0a5a);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 0;
+    border-radius: 5px;
+}
+
+.social-text{
+    position: relative;
+    color: white;
+    text-decoration: none;
+    z-index: 2;
+}
+
+.social-button:hover::before {
+    transform: translateY(0);
+}
+
+.social-button:hover {
+    color: white; /* Цвет текста при наведении */
+}

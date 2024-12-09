@@ -1,0 +1,180 @@
+.SinglAndMultiPlayer {
+    position: relative; /* Ограничивает дочерние элементы */
+    height: 100vh; /* Высота блока на весь экран */
+    overflow: hidden; /* Ограничивает видимость дочерних элементов */
+}
+
+.GameMode{
+    height: 5vh;
+    /*background-color: #0c0627;*/
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.Block.GameMode {
+    align-items: center;
+    background: linear-gradient(to bottom, #000b16, #003563); /* Темно-синий градиент */
+    color: white; /* Белый цвет текста */
+    text-align: center; /* Центрируем текст */
+}
+
+.Block.GameMode h1 {
+    font-size: 2.5rem; /* Размер заголовка */
+    margin: 0; /* Убираем отступы */
+    letter-spacing: 2px; /* Межбуквенный интервал */
+}
+
+:root {
+    --background-color: rgba(255, 255, 255, 0.1);
+    --border-color: rgba(255, 255, 255, 0.2);
+    --blur: 10px;
+    --animation-duration: 0.3s;
+}
+
+
+.left-half, .right-half {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-half {
+    left: 0;
+}
+
+.right-half {
+    right: 0;
+}
+
+.title {
+    font-size: 48px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.card-text {
+    transform: translate(0, 0);
+    padding: 50px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    position: absolute; /* Позиционирование текста внутри карточки */
+    text-align: justify;
+
+    line-height: 1.5;
+}
+
+.cardSM {
+    position: relative;
+    width: auto; /* Исходная ширина */
+    min-width: 350px;
+    height: 100px; /* Устанавливаем фиксированную высоту для карточки */
+    background: var(--background-color);
+    border-radius: 15px; /* Закругленные края */
+    backdrop-filter: blur(var(--blur)); /* Эффект размытия */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Тень */
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+
+    display: flex;
+    flex-direction: column; /* Располагаем элементы (заголовок и текст) вертикально */
+    justify-content: center; /* Центрируем содержимое по вертикали */
+    align-items: center; /* Центрируем содержимое по горизонтали */
+    text-align: center;
+    padding: 10px;
+}
+
+.cardSM:hover .card-text {
+    opacity: 1;
+}
+
+.cardSM:hover {
+    background: rgba(255, 255, 255, 0.2); /* При наведении фон становится ярче */
+    width: 60%; /* Ширина при наведении */
+    height: 70%; /* Высота при наведении */
+    text-align: center;
+}
+
+.cardSM:hover .title {
+    opacity: 0; /* Прячем заголовок при наведении */
+}
+
+.card:hover {
+    opacity: 1;
+}
+
+.cardSM .title {
+    z-index: 2; /* Заголовок всегда поверх текста */
+}
+
+.cardSM .card-text {
+    z-index: 1; /* Текст будет скрыт в обычном состоянии */
+}
+
+@media (max-width: 768px) {
+    .Block.SinglAndMultiPlayer {
+        display: flex;
+        flex-direction: column; /* Располагаем карточки вертикально */
+        justify-content: center; /* Центрируем по вертикали */
+        align-items: center; /* Центрируем по горизонтали */
+        min-height: 100vh; /* Высота блока равна высоте экрана */
+    }
+
+    .left-half, .right-half {
+        position: static;
+        width: 100%;
+    }
+
+    .cardSM {
+        width: 90%; /* Уменьшаем ширину карточек */
+        height: auto;
+        margin: 20px 0; /* Добавляем вертикальные отступы между карточками */
+        transition: none;
+    }
+
+    .cardSM .card-text {
+        display: none; /* Скрываем текст card-text */
+    }
+
+    .cardSM .title {
+        opacity: 1; /* Заголовок всегда видим */
+        pointer-events: auto; /* Ссылки активны */
+    }
+
+    .cardSM:hover {
+        background: var(--background-color); /* Оставляем базовый фон */
+        width: 90%; /* Размер карточки не меняется */
+        height: auto; /* Высота остается фиксированной */
+    }
+
+    .cardSM:hover .title {
+        opacity: 1; /* Заголовок не изменяется */
+    }
+}
+
+
+/*ССЫЛКА*/
+.card-link {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: inherit; /* Цвет текста будет наследоваться от родителя */
+    
+}
+
+.card-link:hover, .card-link:focus {
+    color: inherit; /* Сохраняем цвет даже при наведении или фокусе */
+    text-decoration: none; /* Убираем подчеркивание при наведении */
+}

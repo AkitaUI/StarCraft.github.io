@@ -1,0 +1,46 @@
+.HistoryOfStarcraft{
+    height: auto;
+    width: auto;
+    /*background-color: #0c0627;*/
+    background-image: url('blackPhone.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Arial', sans-serif;
+    text-align: center; /* Центрирование текста */
+    padding: 40px 20px;
+}
+
+.history-content {
+    display: flex;
+    flex-wrap: wrap; /* Разрешаем перенос строк */
+    justify-content: center; /* Центровка содержимого */
+    gap: 50px; /* Расстояние между элементами */
+}
+
+.item {
+    flex: 0 1 calc(45% - 20px); /* Задаём ширину для боковых элементов */
+    background-color: transparent; /* Без фона у отдельных блоков */
+    margin-bottom: 30px; /* Отступ между строками */
+}
+
+.item:nth-child(3) {
+    flex: 0 1 calc(90% - 20px); /* Центральный блок занимает больше ширины */
+}
+
+.block-title_History {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff; /* Белый цвет текста */
+}
+
+.block-subtitle_History {
+    word-wrap: break-word; /* Разрешает переносить длинные слова */
+    white-space: normal;
+    font-size: 16px;
+    color: #9cb8ec; /* Цвет подзаголовков */
+    margin-bottom: 10px; /* Отступы между элементами */
+    width: 80%; /* Уменьшение ширины текста */
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,39 @@
+.AskForRegistration {
+    position: relative; /* Ограничивает дочерние элементы */
+    height: 110vh; /* Высота блока на весь экран */
+    overflow: hidden; /* Ограничивает видимость дочерних элементов */
+}
+
+.Block.AskForRegistration .content {
+    position: absolute;
+    top: 66%; /* Две трети от верхней границы */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центровка контента */
+    text-align: center;
+    color: white; /* Текст белого цвета, чтобы выделяться на фоне */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9); /* Тень для читаемости */
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+}
+
+@media (max-width: 768px) {
+    .Block.AskForRegistration .content{
+        font-size: 18px;
+    }
+}
+
+.Block.AskForRegistration .register-btn {
+    padding: 10px 20px;
+    font-size: 44px;
+    color: white;
+    background-color: #c57600;
+    border:#975d06;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.Block.AskForRegistration .register-btn:hover {
+    background-color: #975d06;
+}

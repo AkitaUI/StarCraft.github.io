@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Overlay Effect with Carousel</title>
+    <link rel="icon" type="image/png" href="pngaaa.com-104164.png"> 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("ZergRush.jpg"); 
+            background-size: cover;
+            background-position: center;
+            z-index: -1; /* Оставляет фон на заднем плане */
+        }
+
+        .overlay {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.9); /* Прозрачный фон для эффекта наложения */
+            width: 100%;
+            height: 50vh; /* Новый блок перекрывает только половину фона */
+            z-index: 1;
+            transform: translateY(100%);
+            animation: center-position 2s ease-out forwards; /* Используем одну анимацию */
+            display: flex;
+            align-items: center; /* Центрирует иконки вертикально */
+            justify-content: center; /* Центрирует иконки горизонтально */
+
+            background-image: url("blackPhone.jpg"); 
+            background-size: cover; /* Изображение покрывает весь блок */
+            background-repeat: no-repeat; /* Запрещаем повторение изображения */
+            background-position: center; /* Центрируем изображение в блоке */
+            border: 5px solid #080717;
+        }
+
+        /* Чистая анимация подъема в центр */
+        @keyframes center-position {
+            0% {
+                transform: translateY(100%); /* Начинаем за пределами экрана */
+            }
+            100% {
+                transform: translateY(25vh); /* Останавливаемся в центре */
+            }
+        }
+
+        .carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 80%;
+            overflow: hidden;
+
+            color: white;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            will-change: transform;
+        }
+
+        .carousel-item {
+            min-width: 20%; /* Пять элементов видимы одновременно */
+            text-align: center;
+            position: relative;
+        }
+
+        .carousel-item img {
+            width: 80px;
+            height: 80px;
+            margin: auto;
+            border-radius: 50%; /* Делает иконки круглыми */
+            border: 2px solid #ccc; /* Добавляет границу для лучшего визуального эффекта */
+            transition: transform 0.3s ease; /* Плавное увеличение */
+        }
+
+        .carousel-item:hover img {
+            transform: scale(1.2); /* Увеличиваем иконку при наведении */
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            z-index: 2;
+        }
+
+        .carousel-button.prev {
+            left: 0;
+        }
+
+        .carousel-button.next {
+            right: 0;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.582);
+            padding: 10px;
+            border-radius: 3px;
+            color: #ffd700;
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #ffcc00;
+        }
+
+        .overlay h1 {
+            position: absolute; /* Позволяет точно управлять положением текста */
+            top: 10%; /* Располагаем текст сверху */
+            left: 50%; /* Сдвигаем текст на середину по горизонтали */
+            transform: translateX(-50%); /* Центрируем текст по горизонтали */
+            color: rgb(255, 255, 255); /* Цвет текста */
+            font-size: 3em; /* Размер текста */
+            text-align: center; /* Выравниваем текст внутри блока */
+        }
+
+        .carousel-item p {
+            max-width: 200px; /* Максимальная ширина текста */
+            margin: 10px auto; /* Центрирование и отступы */
+            font-size: 1rem; /* Размер шрифта */
+            line-height: 1.5; /* Межстрочный интервал для читаемости */
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        
+    </div>
+
+    <a href="Starcraft.html" class="back-link">Назад</a>
+
+    <div class="overlay">
+        <h1>Виды юнитов</h1>
+
+        <div class="carousel">
+            <button class="carousel-button prev">&#10094;</button>
+            <div class="carousel-track">
+                <div class="carousel-item">
+                    <img src="Stalker.png" alt="Icon 1">
+                    <p class="Stalker">
+                        Дальнобойный юнит расы протоссов - Сталкер
+                    </p>
+                </div>
+                <div class="carousel-item">
+                    <img src="Immortal.png" alt="Icon 2">
+                    <p class="Immortal">
+                        Дальнобойный и бронированный юнит расы протоссов - Бессмертный
+                    </p>
+                </div>
+                <div class="carousel-item">
+                    <img src="Carrier.png" alt="Icon 3">
+                    <p class="Carrier">
+                        Носитель небольших истребителей без собственного вооружения - Авианосец 
+                    </p>
+                </div>
+                <div class="carousel-item">
+                    <img src="MarineWithGun.png" alt="Icon 4">
+                    <p class="Marine">
+                        Основная боевая единицы терранов - Морпех
+                    </p>
+                </div>
+                <div class="carousel-item">
+                    <img src="Siege_Tank.png" alt="Icon 5">
+                    <p class="Siege_Tank">
+                        Осадный танк - главная наземная единица техники
+                    </p>
+                </div>
+                <div class="carousel-item">
+                    <img src="Battlecruiser_Default.png" alt="Icon 6">
+                    <p class="Battlecruiser">
+                        Тяжелый крейсер - корабль дальнего следования с огромной боевой мощью и пушкой Ямато
+                    </p>
+                </div>
+                <div class="carousel-item">
+                    <img src="1._Hydralisk_Default.png" alt="Icon 7">
+                    <p class="Hydralisk">
+                        Дальнобойный зерг, основа роя - Гидралиск!
+                    </p>
+                </div>
+                <div class="carousel-item">
+                    <img src="1._Mutalisk_Default.png" alt="Icon 8">
+                    <p class="Mutalisk">
+                        Главный летающий зерг, маневренно атакующий слабые места наземной обороны - Муталиск
+                    </p>
+                </div>
+                <div class="carousel-item">
+                    <img src="1._Ultralisk_Default.png" alt="Icon 9">
+                    <p class="Ultralisk">
+                        Громадный зерг, однйо поступью сметающий армии и города - Ультралиск!
+                    </p>
+                </div>
+                <div class="carousel-item">
+                    <img src="Icon_Protoss_Photon_Cannon.png" alt="Icon 10">
+                    <p class="Photon_Cannon">
+                        Оборонительное сооружение протоссов - Фотонная пушка
+                    </p>
+                </div>
+            </div>
+            <button class="carousel-button next">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const items = Array.from(track.children);
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const nextButton = document.querySelector('.carousel-button.next');
+        const itemWidth = items[0].getBoundingClientRect().width;
+
+        // Клонируем элементы для бесшовной прокрутки
+        items.forEach(item => {
+            const clone = item.cloneNode(true);
+            track.appendChild(clone);
+        });
+
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const offset = -(currentIndex * itemWidth);
+            track.style.transform = `translateX(${offset}px)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = items.length - 1;
+                track.style.transition = 'none';
+                track.style.transform = `translateX(-${(items.length - 1) * itemWidth}px)`;
+                requestAnimationFrame(() => {
+                    track.style.transition = 'transform 0.5s ease';
+                    currentIndex--;
+                    updateCarousel();
+                });
+            } else {
+                updateCarousel();
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex++;
+            if (currentIndex >= items.length) {
+                currentIndex = 0;
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(0px)';
+                requestAnimationFrame(() => {
+                    track.style.transition = 'transform 0.5s ease';
+                    currentIndex++;
+                    updateCarousel();
+                });
+            } else {
+                updateCarousel();
+            }
+        });
+
+        updateCarousel();
+    </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+.Gallery{
+    height: 85vh;
+    width: auto;
+    /*background-color: #0c0627;*/    
+    background-image: url('blackPhone.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 768px) {
+    .Gallery{
+        height: 110vh;
+    }
+}
+
+body .gallery {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222;
+    color: #fff;
+}
+
+.gallery {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    overflow: hidden;
+
+    top: 35vh; /* Две трети от верхней границы */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-photo {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.overlay_Gallery {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.gallery:hover .overlay_Gallery {
+    opacity: 1;
+}
+
+.navigation_Gallery {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+}
+
+.nav-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+.bottom-panel {
+    position: absolute;
+    bottom: 0; /* Ensures the panel stays within the photo boundaries */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: rgba(0, 4, 66, 0.644);
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    box-sizing: border-box;
+    z-index: 3;
+}
+
+.thumbnail-gallery {
+    display: flex;
+    gap: 10px;
+    margin-left: auto; /* Align the gallery to the right */
+}
+
+.thumbnail {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.thumbnail.active {
+    border: 2px solid #fff;
+    opacity: 1;
+}
+
+.photo-description {
+    font-size: 14px;
+    color: #fff;
+    margin-right: auto; /* Align the description to the left */
+}
+
+.Block.Gallery {
+    text-align: center; /* Центрирование заголовка и текста */
+    padding: 40px 20px; /* Отступы блока */
+    background-color: #f4f4f4; /* Фоновый цвет блока */
+    font-family: 'Arial', sans-serif;
+}
+
+.block-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.block-subtitle {
+    word-wrap: break-word; /* Разрешает переносить слова, которые не помещаются */
+    white-space: normal;
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #9cb8ec;
+
+    width: 60%; /* Ограничиваем ширину блока 60% от ширины страницы */
+    margin-left: auto; /* Левый отступ автоматически */
+    margin-right: auto; /* Правый отступ автоматически */
+}

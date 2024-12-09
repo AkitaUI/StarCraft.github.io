@@ -1,0 +1,202 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #1e2a47, #1a214d, #0d1b2a);
+    color: #f4f4f4;
+    line-height: 1.6;
+    background-size: cover;
+    background-attachment: fixed;
+
+    background-image: url("RedPhone.jpg");
+}
+
+h1, h2 {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    height: auto;
+
+    background-image: url("blackPhone.jpg");
+    border: 5px solid #080717;
+}
+
+.product-card {
+    background-color: #1d2a47;
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    height: 38vh;
+
+    background-size: cover; /* Масштабирование изображения для полного заполнения */
+    background-position: center; /* Центрирование изображения */
+    background-repeat: no-repeat; /* Отключение повторения изображения */
+    color: #ffffff;
+
+    display: flex;
+    flex-direction: column; /* Расположение элементов сверху вниз */
+    justify-content: flex-end; /* Выравнивание содержимого по нижнему краю */
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.product-content {
+    flex: 1;  /* Содержимое карточки будет занимать все пространство */
+    background-image: url('WoL.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-card[alt="Wol"]{
+    background-image: url('WoL.jpg');
+}
+.product-card[alt="Hots"]{
+    background-image: url('HotS.jpg');
+}
+.product-card[alt="Lotv"]{
+    background-image: url('LotV.jpg');
+}
+
+.product-footer {
+    background-color: rgba(0, 0, 0, 1); /* Полупрозрачный черный фон */
+    color: white;
+    display: flex;
+    justify-content: center ;
+    
+    align-items: center;
+    position: absolute;
+    bottom: -50px; /* Располагаем внизу карточки */
+    width: 100%; /* Полоска на всю ширину карточки */
+    border-radius: 0 0 10px 10px; /* Округляем только нижний угол */
+}
+
+.product-price{
+    position: relative; /* Для правильного позиционирования псевдоэлемента */
+    z-index: 4; /* Чтобы текст и кнопка были поверх псевдоэлемента */
+}
+
+.add-to-cart{
+    
+    z-index: 4;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height:220px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.product-name {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #ffd700;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #d3d3d3;
+}
+
+button {
+    background-color: #005f73;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #006f83;
+}
+
+#cart {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+
+    height: auto;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
+                url('blackPhone.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#cart p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#cart-items {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 300px;
+    max-height: 800px;
+    overflow-y: auto;
+
+    height: auto;
+}
+
+.cart-product-card {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+
+.back-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #ffd700;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #ffcc00;
+}
+
+h1{
+    font-size: 35px;
+}

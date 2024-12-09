@@ -1,0 +1,86 @@
+.EnteringInCoprulu{
+    height: auto;
+    width: auto;
+    /*background-color: #0c0627;*/
+    background-image: url('blackPhone.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.Block.EnteringInCoprulu {
+    text-align: center; /* Центрирование заголовка и текста */
+    padding: 40px 20px; /* Отступы блока */
+    background-color: #f4f4f4; /* Фоновый цвет блока */
+    font-family: 'Arial', sans-serif;
+}
+
+.block-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.block-subtitle {
+    word-wrap: break-word; /* Разрешает переносить слова, которые не помещаются */
+    white-space: normal;
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #9cb8ec;
+
+    width: 60%; /* Ограничиваем ширину блока 60% от ширины страницы */
+    margin-left: auto; /* Левый отступ автоматически */
+    margin-right: auto; /* Правый отступ автоматически */
+}
+
+.card-container {
+    display: flex;
+    justify-content: center; /* Центрирование карточек */
+    gap: 50px; /* Промежутки между карточками */
+    flex-wrap: wrap; /* Разрешить перенос карточек на новые строки */
+    margin-top: 50px;
+}
+
+.card {
+    border-radius: 5px; /* Скругленные углы */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+    width: 300px; /* Фиксированная ширина карточки */
+    height: 300px;
+    text-align: center;
+    overflow: hidden;
+
+    display: grid; /* Включаем Grid */
+    place-items: center;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px; /* Скругленные углы изображения */
+    margin-bottom: 15px;
+    margin: 0; /* Убираем отступы вокруг изображения */
+    padding: 0; /* Убираем внутренние отступы */
+    border: none;
+    object-fit: cover;
+    display: block;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #9cb8ec;
+}
+
+.card-wrapper{
+    width: 300px;
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    border: none; /* Убираем рамку, если она есть */
+    overflow: hidden;
+}
